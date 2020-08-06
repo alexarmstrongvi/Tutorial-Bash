@@ -1,0 +1,46 @@
+#!/usr/bin/env bash
+# gdate = GNU date on MacOSX
+echo "======== date ======="
+echo -e "Day"
+echo -e "\t A = $(gdate +"%A (a = %a)")"
+echo -e "\t d = $(gdate +"%d (e = \"%e\")")"
+echo -e "\t j = $(gdate +"%j") (day of the year)"
+echo -e "\t u, w = $(gdate +"%u, %w") (day of the week)"
+echo -e "Week"
+echo -e "\t U, V, W = $(gdate +"%U, %V, %W")"
+echo -e "Month"
+echo -e "\t B = $(gdate +"%B (b/h = %b)")"
+echo -e "\t m = $(gdate +"%m")"
+echo -e "Year"
+echo -e "\t Y = $(gdate +"%Y (y = %y)")"
+echo -e "\t C = $(gdate +"%C") (century)" 
+echo -e "\t G = $(gdate +"%G (g = %g)") (ISO week date)"
+echo -e "Hour"
+echo -e "\t H = $(gdate +"%H (k = \"%k\")")"
+echo -e "\t I = $(gdate +"%I (l = \"%l\")")"
+echo -e "\t P = $(gdate +"%P (p = %p)")"
+echo -e "Minute"
+echo -e "\t M = $(gdate +"%M")"
+echo -e "Second"
+echo -e "\t S = $(gdate +"%S")"
+echo -e "Nanosecond"
+echo -e "\t N = $(gdate +"%N")"
+echo -e "Time zones"
+echo -e "\t Z = $(gdate +"%Z")"
+echo -e "\t z = $(gdate +"%z")"
+echo -e "Useful shortcuts"
+# Now
+echo -e "\t c = $(gdate +"%c")"
+# Date
+echo -e "\t D = $(gdate +"%D")"
+echo -e "\t F = $(gdate +"%F")"
+# Time
+echo -e "\t R = $(gdate +"%R")"
+echo -e "\t T = $(gdate +"%T")"
+# Local specific
+echo -e "\t r = $(gdate +"%r")"
+echo -e "\t x = $(gdate +"%x")"
+echo -e "\t X = $(gdate +"%X")"
+# Unix Time Stamp in seconds (1970-01-01)
+echo -e "\t s = $(gdate +"%s") (UTC)"
+
