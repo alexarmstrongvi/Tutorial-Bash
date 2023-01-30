@@ -1,4 +1,10 @@
 #!/usr/bin/env bash
+################################################################################
+# String manipulation
+#
+# I find the syntax to be very sensative to bash version
+################################################################################
+
 echo "Running $(which bash) (v$BASH_VERSION)"
 
 # see https://www.gnu.org/software/bash/manual/bash.html#Shell-Parameter-Expansion 
@@ -14,11 +20,13 @@ printf "(X) string = %10s\n" "${string: 4}"
 printf "(X) string = %10s\n" "${string: -4}"
 # Use string from index 4 to index 4+4 (python string[4:8])
 printf "(X) string = %8s\n" "${string: 4: 4}"
-# Use string from index 4 to index N-4 (python string[4:-4])
-printf "(X) string = %6s\n" "${string: 4:-4}"
 # Use string from index N-4 to index N-4+3 (python string[-4:-1]
 printf "(X) string = %9s\n" "${string: -4:3}"
+# Use string from index 4 to index N-4 (python string[4:-4])
+# - Only possible in some bash versions
+printf "(X) string = %6s\n" "${string: 4:-4}"
 # Use string from index N-4 to index N-3 (python string[-4:-3])
+# - Only possible in some bash versions
 printf "(X) string = %7s\n" "${string: -4:-3}"
 echo
 
@@ -31,10 +39,12 @@ echo "(X) array = ${array}" # defaults to index=0
 echo "(X) array = ${array[0]}"
 # Print entire array
 # Note: '*' or '@' only differ in expanding inside double quotes.
-#       '*' exapnds to a single string while '@' expands to separate strings.
+#       '*' expands to a single string while '@' expands to separate strings.
 #       This is useful for looping over expansion
-echo "(X) array = ${array[*]} (n = $(for x in "${array[*]}"; do echo $x; done | wc -l))"
-echo "(X) array = ${array[@]} (n = $(for x in "${array[@]}"; do echo $x; done | wc -l))"
+n=$(for x in "${array[*]}"; do echo $x; done | wc -l)
+echo "(X) array = ${array[*]} (n = ${n})"
+n=$(for x in "${array[@]}"; do echo $x; done | wc -l)
+echo "(X) array = ${array[@]} (n = ${n})"
 # Print indexes with !. Happen to match the values in this case
 echo "(X) array = ${!array[@]}" 
 echo "(X) array = ${!array[*]}"

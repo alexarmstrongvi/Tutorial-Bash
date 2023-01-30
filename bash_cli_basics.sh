@@ -21,7 +21,7 @@ seq -s " " -t '\n' 10 -2 -10
 seq -s " " -t '\n' -w 10 -2 -10
 # Decimals
 seq -s " " -t '\n' 0 0.3 1
-echo 
+echo
 
 echo "===== jot ====="
 # Like seq but more features (e.g. random numbers)
@@ -32,7 +32,7 @@ jot -s " " 3 5
 jot -s " " 3 5 15
 jot -s "" -c - 33 127
 jot -s " " -r 10 0 10 1
-echo 
+echo
 
 # rename
 
@@ -67,7 +67,7 @@ echo
 ################################################################################
 # cat, head, tail
 # expand - replace tabs with spaces
-    
+
 ########################################
 echo "===== tr (translate) ====="
 string="abc 123   ABC 123"
@@ -88,9 +88,6 @@ echo "$string" | tr '[:upper:]' '[:lower:]'
 # Reduce ("squeeze") duplicate characters to a single character
 echo "$string" | tr -s ' '
 
-
-exit
-
 ########################################
 # sort
 
@@ -108,7 +105,7 @@ echo
 ########################################
 echo "===== column ====="
 # BSD column ignores empty entries between delimiters so add a space
-echo " 
+echo "
  ,ColumnA,ColumnB,ColumnC
 Row1, ,,C1
 Row2, ,B2, " | column -t -s ","
@@ -202,7 +199,7 @@ rm tmp1.txt tmp2.txt
 #echo "===== xargs ====="
 # blah | xargs echo
 # blah | xargs -t echo
-# blah | xargs -I{} echo {} 
+# blah | xargs -I{} echo {}
 
 ########################################
 # tar

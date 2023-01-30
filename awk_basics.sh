@@ -9,7 +9,7 @@ echo "Running AWK basics"
 # (1) parsing the text into columns according to delimeter
 # (2) matching specific lines according to pattern
 # (3) performing action(s) on the line
-# (4) printing an output 
+# (4) printing an output
 
 ################################################################################
 # Basic match and act : sed 'pattern {actions}'
@@ -45,7 +45,7 @@ echo "(9)|New|field|separator" | awk -F "|" '{OFS=" : "; print $1,"OFS = \""OFS"
 echo "(10) Print this" | awk 'BEGIN {print "(10) Print this first"}; {print}'
 ## END - execute after processing all lines
 echo "(11) Print this" | awk '{print}; END {print "(11) Print this last"}'
-## RS - Record Separator variable (i.e. the text the indicates a new line) 
+## RS - Record Separator variable (i.e. the text the indicates a new line)
 echo "(11) Separate sentences. Not at \n" | awk 'BEGIN {RS="."}; {print}'
 ## ORS - Output Record Separator variable (i.e. the text appended to each print statement. Defaults to '\n')
 echo "(12) Print this" | awk 'BEGIN {ORS=" (ORS) "}; {print; print "Print this on the same line"}'; echo
